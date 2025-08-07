@@ -1,0 +1,47 @@
+     @font-face {
+            font-family: 'OpenSans';
+            src: url('assets/OpenSans-Light.ttf') format('truetype'); /* Assicurati di avere il file del font */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'OpenSans', monospace; /* Fallback a monospace */
+            background-color: #ffffff; /* Colore di sfondo bianco */
+            color: #000000; /* Colore del testo nero */
+        }
+
+
+.ripple-button {
+    position: relative;
+    overflow: hidden;
+    padding: 15px 30px;
+    background-color: hsl(32, 88%, 46%);
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+.ripple-button:hover {
+    background-color: #b88a0c;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple-animation 600ms linear;
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
